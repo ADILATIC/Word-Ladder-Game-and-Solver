@@ -1,0 +1,20 @@
+build:
+	gcc -g main.c -o ladders.exe
+
+run_fun:
+	./ladders.exe -p ON -n 4 -d dictionary.txt -s RAND -f RAND
+
+run_simple3:
+	./ladders.exe -n 3 -d simple3.txt -s RAND -f RAND
+
+run_simple4:
+	./ladders.exe -n 4 -d simple4.txt -s RAND -f RAND
+
+run_simple5:
+	./ladders.exe -n 5 -d simple5.txt -s RAND -f RAND
+
+run_valgrind: build
+	valgrind --leak-check=yes ./ladders.exe
+
+clean:
+	rm -f ladders.exe
